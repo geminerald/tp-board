@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="refresh" content="1800">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Poppins', 'sans-serif'],
+            },
+          },
+          screens: {
+            tablet: '640px',
+            // => @media (min-width: 640px) { ... }
 
-    <title>TP Board</title>
-<!-- TrustBox script -->
-<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-<!-- End TrustBox script -->
-</head>
-<body>
-<!-- TrustBox widget - Grid -->
-<div class="trustpilot-widget" data-locale="en-US" data-template-id="539adbd6dec7e10e686debee" data-businessunit-id="5880bfe70000ff00059b1502" data-style-height="1000px" data-style-width="100%" data-theme="light" data-stars="5" data-review-languages="en">
-    <a href="https://www.trustpilot.com/review/www.prepaypower.ie" target="_blank" rel="noopener">Trustpilot</a>
-  </div>
-  <!-- End TrustBox widget -->
-</body>
+            laptop: '1024px',
+            // => @media (min-width: 1024px) { ... }
+
+            desktop: '1280px',
+            // => @media (min-width: 1280px) { ... }
+          },
+        },
+        darkMode: 'class',
+      };
+    </script>
+    <title>LandingPage</title>
+  </head>
+  <body class="bg-gradient-to-r from-slate-900 to-slate-700">
+    <div
+      class="data-display tablet:w-full laptop:w-2/3 m-auto h-screen flex-columns flex-grow p-4 grid grid-rows-5 grid-cols-8 gap-3"
+    >
+      <a href="prepaypowerMainCx.html" id="pppCX" class="row-span-3 col-span-4 bg-slate-600 rounded-lg cursor-pointer p-16 flex flex-col justify-center hover:bg-slate-500 items-center">
+            <h3 class="text-3xl font-display text-white text-center">PrepayPower</h2>
+            <h2 class="text-5xl font-display text-white text-center">Main CX</h3>
+      </a>
+      <a  href="bbTier2.html" id="bbTier2" class="bg-blue-400 row-span-2 col-span-4 bg-slate-600 rounded-lg cursor-pointer p-16 flex flex-col  hover:bg-slate-500 justify-center items-center">
+            <h3 class="text-3xl font-display text-white text-center">PrepayPower</h2>
+            <h2 class="text-5xl font-display text-white text-center">Broadband Tier 2</h3>
+      </a>
+      <a  href="yunoMainCX.html" id="managementBoard" class="bg-blue-400 row-span-3 col-span-4 bg-slate-600 rounded-lg cursor-pointer p-16 flex flex-col  hover:bg-slate-500 justify-center items-center">
+            <h3 class="text-3xl font-display text-white text-center">Yuno Energy</h2>
+            <h2 class="text-5xl font-display text-white text-center">Main CX</h3>
+      </a>
+      <a  href="hypercare.html" id="yunoCX" class="bg-blue-400 row-span row-span-2 col-span-4 bg-slate-600 rounded-lg cursor-pointer p-16 flex flex-col  hover:bg-slate-500 justify-center items-center">   
+            <h3 class="text-3xl font-display text-white text-center">PrepayPower</h2>
+            <h2 class="text-5xl font-display text-white text-center">HyperCare</h3></div>
+      </a>
+  </body>
 </html>
