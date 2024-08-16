@@ -1,0 +1,16 @@
+.hidden-button {
+  position: fixed;
+  top: -50px; /* Hides the button off the screen */
+  left: 0;
+  transition: top 0.3s ease; /* Transition effect */
+}
+
+/* When hovering the top-left corner (10x10px area) */
+.hover-area:hover + .hidden-button {
+  top: 10px; /* Slide down the button */
+}
+
+/* When hovering the button itself, keep it in position */
+.hidden-button:hover {
+  top: 10px;
+}
