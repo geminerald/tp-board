@@ -3,143 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
+    <title>Welcome to Our Office</title>
     <style>
-    /* Reset styles */
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
+        /* Reset styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-        font-family: Arial, sans-serif;
-        padding: 20px;
-    }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            color: #333;
+        }
 
-    .splash-headline {
-        font-size: 3.5em;
-        color: #333;
-        margin-bottom: 20px;
-        text-align: center;
-        width: 100%;
-        animation: fadeIn 1s ease-in-out;
-    }
+        /* Full-width splash headline */
+        .splash-headline {
+            width: 100%;
+            font-size: 4em;
+            color: #E71E70;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-    /* Main container for carousel and additional section */
-    .main-content {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 1200px;
-        gap: 20px;
-    }
+        /* Main container for the carousel and additional section */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            padding: 30px;
+            gap: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
 
-    /* Carousel container */
-    .carousel {
-        position: relative;
-        overflow: hidden;
-        width: 66.66%; /* 2/3 width */
-        height: 60vh;
-        background: #ddd;
-        border-radius: 10px;
-    }
+        /* Additional section styling */
+        .additional-section {
+            width: 33.33%;
+            background-color: #f2f2f2;
+            border-left: 5px solid #E71E70;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            color: #333;
+            text-align: center;
+            border-radius: 8px;
+        }
 
-    .carousel img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: translate(-50%, -50%);
-        display: none;
-    }
+        /* Carousel container styling */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 66.66%;
+            height: 60vh;
+            background: #E71E70;
+            border-radius: 8px;
+        }
 
-    .carousel img.active {
-        display: block;
-    }
+        .carousel img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
 
-    /* Caption */
-    .caption {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.6);
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 1.2em;
-        animation: fadeIn 1s ease-in-out;
-    }
+        .carousel img.active {
+            display: block;
+        }
 
-    /* Carousel navigation buttons */
-    .nav-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        border: none;
-        padding: 10px;
-        font-size: 1.5em;
-        cursor: pointer;
-        border-radius: 50%;
-    }
+        /* Caption styling */
+        .caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            animation: fadeIn 1s ease-in-out;
+        }
 
-    .prev {
-        left: 10px;
-    }
+        /* Carousel navigation buttons */
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 50%;
+        }
 
-    .next {
-        right: 10px;
-    }
+        .prev {
+            left: 10px;
+        }
 
-    /* Additional section */
-    .additional-section {
-        width: 33.33%; /* 1/3 width */
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2em;
-        color: #333;
-    }
+        .next {
+            right: 10px;
+        }
 
-    @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-    }
-</style>
-
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Splash Headline -->
-        <h1 class="splash-headline">Happy Friday!</h1>
 
-        <!-- Text Box -->
-       <div class="additional-section">
-        <p>Explore our spaces designed for creativity, collaboration, and comfort!</p>
-    </div>
+    <!-- Splash Headline -->
+    <div class="splash-headline">Welcome to Our Office!</div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        
+        <!-- Additional Section -->
+        <div class="additional-section">
+            <p>Explore our spaces designed for creativity, collaboration, and comfort!</p>
+        </div>
 
         <!-- Carousel -->
         <div class="carousel">
-            <img src="christmas-party.png" alt="Image 1" class="active" data-caption="Save the date for the Christmas Party!">
-            <img src="padraig.jpg" alt="Image 2" data-caption="Pádraig McNamara - Shortlisted for Agent of the Year">
-            <img src="digital-transformation.jpg" alt="Image 3" data-caption="Congratulations to Digital Transformation for being shortlisted for Support Team of the Year">
-            <img src="digital-transformation.jpg" alt="Image 4" data-caption="Congratulations to Digital Transformation for being shortlisted for Support Team of the Year">
+            <img src="images/image1.jpg" alt="Image 1" class="active" data-caption="Welcome to our bright and welcoming office!">
+            <img src="images/image2.jpg" alt="Image 2" data-caption="Get ready to thrive in our collaborative spaces!">
+            <img src="images/image3.jpg" alt="Image 3" data-caption="Enjoy coffee breaks with amazing views.">
 
-            <!-- Captions -->
+            <!-- Caption -->
             <div class="caption">Welcome to our bright and welcoming office!</div>
 
             <!-- Navigation buttons -->
