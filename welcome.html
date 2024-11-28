@@ -73,16 +73,25 @@
             border-radius: 8px;
         }
 
-        .carousel img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-            display: none;
-        }
+        ..carousel img {
+    width: auto; /* Allow natural width */
+    height: auto; /* Allow natural height */
+    max-width: 100%; /* Ensure image doesn't overflow container width */
+    max-height: 100%; /* Ensure image doesn't overflow container height */
+    margin: auto;
+    position: relative;
+    display: none;
+}
+
+.carousel {
+    display: flex;
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center images horizontally */
+    overflow: hidden; /* Hide overflow in case of aspect ratio mismatches */
+    width: 100%;
+    height: 60vh; /* Keep the container height consistent */
+}
+
 
         .carousel img.active {
             display: block;
