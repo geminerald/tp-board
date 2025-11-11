@@ -1,211 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="1800" > 
-    <title>Welcome to Our Office</title>
-    <style>
-        /* Reset styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+    <meta http-equiv="refresh" content="1800" />
 
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f9f9f9;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            color: #333;
-        }
-
-        /* Full-width splash headline */
-        .splash-headline {
-            width: 100%;
-            font-size: 4em;
-            color: #E71E70;
-            text-align: center;
-            margin-bottom: 40px;
-            font-weight: bold;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Main container for the carousel and additional section */
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-            padding: 30px;
-            gap: 20px;
-            background-color: #fff;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-
-        /* Additional section styling */
-        .additional-section {
-            width: 33.33%;
-            background-color: #f2f2f2;
-            border-left: 5px solid #E71E70;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3em;
-            color: #333;
-            text-align: center;
-            border-radius: 8px;
-        }
-.carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Scale smaller images up and larger images down */
-    background-color: #fff; /* Add a neutral background to replace the pink */
-    border-radius: 8px; /* Keep the rounded corners for aesthetics */
-    display: none;
-}
-        /* Carousel container styling
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            width: 66.66%;
-            height: 60vh;
-            background: #E71E70;
-            border-radius: 8px;
-        }
- */
-
-
-
-.carousel {
-    display: flex;
-    align-items: center; /* Center images vertically */
-    justify-content: center; /* Center images horizontally */
-    overflow: hidden; /* Hide overflow in case of aspect ratio mismatches */
-    width: 100%;
-    height: 60vh; /* Keep the container height consistent */
-}
-
-
-        .carousel img.active {
-            display: block;
-        }
-
-        /* Caption styling */
-        .caption {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.2em;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        /* Carousel navigation buttons */
-        .nav-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
-            border: none;
-            padding: 10px;
-            font-size: 1.5em;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-        ul{ margin: 1rem;}
-        li{
-            padding: 1rem;
-        }
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        
-    </style>
-</head>
-<body>
-
-    <!-- Splash Headline -->
-    <div class="splash-headline">Welcome to the Office!</div>
-
-    <!-- Main Content Area -->
-    <div class="main-content">
-        
-        <!-- Additional Section -->
-        <div class="additional-section">
-            <p style="color:#fafafa;background-color:#e71e70; width:100%; border-radius:2px;font-size:2em">News and Updates</p>
-            <ul>
-                <li>Congratulations to Daniel and Stephen, our new CX Specialists</li>
-                <li>Sign up for Movember in aid of Laura Lynn</li>
-                <li>Congratulations to all who were nominated for the CCMA's</li>
-                <li>Don't forget to ask for Google and Trustpilot Reviews!</li>
-            </ul>
-        </div>
-
-        <!-- Carousel -->
-        <div class="carousel">
-            <img src="images/christmas-party.png" alt="Image 1" class="active" data-caption="Save the date for the Christmas Party!">
-            <img src="images/digital-transformation-tux.jpg" alt="Image 2" data-caption="Digital Transformation - shortlisted for Support Team of the Year!">
-            <img src="images/padraig-commended.png" alt="Image 3" data-caption="Pádraig McNamara - Highly Commended for Agent of the Year.">
-            <img src="images/ronan-commended.png" alt="Image 4" data-caption="Ronan Boyle - Highly Commended for Team Leader of the Year.">
-            <img src="images/stairway.png" alt="Image 5" data-caption="Well done everyone who walked the Stairway to Heaven!">
-            <img src="images/yuno-team.jpg" alt="Image 6" data-caption="Yuno CX - Shortlisted for Team of the Year">
-            <img src="images/c-letter.png" alt="Image 11" data-caption="A lovely letter from a customer to Gemma!">
-
-            <!-- Caption -->
-            <div class="caption">Welcome to our bright and welcoming office!</div>
-
-            <!-- Navigation buttons -->
-            <button class="nav-button prev" onclick="prevSlide()">&#10094;</button>
-            <button class="nav-button next" onclick="nextSlide()">&#10095;</button>
-        </div>
-    </div>
-
-    <script>
-        const images = document.querySelectorAll('.carousel img');
-        const caption = document.querySelector('.caption');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            images.forEach(img => img.classList.remove('active'));
-            images[index].classList.add('active');
-            caption.textContent = images[index].getAttribute('data-caption');
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % images.length;
-            showSlide(currentIndex);
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            showSlide(currentIndex);
-        }
-
-        setInterval(nextSlide, 10000); // Automatically move to the next slide every 5 seconds
-    </script>
-    <!-- TrustBox script -->
+    <title>TP Board</title>
+    <meta />
+<!-- TrustBox script -->
 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 <!-- End TrustBox script -->
-</body>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Poppins', 'sans-serif'],
+            },
+          },
+          screens: {
+            tablet: '640px',
+            // => @media (min-width: 640px) { ... }
+
+            laptop: '1024px',
+            // => @media (min-width: 1024px) { ... }
+
+            desktop: '1280px',
+            // => @media (min-width: 1280px) { ... }
+          },
+        },
+        darkMode: 'class',
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hover-area w-40 h-40 fixed top-0 left-0"></div>
+    <a href="index.html" class="hidden-button bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg">
+      Back to Index
+    </a>
+    <div id="main" class="flex flex-col h-screen">
+      <!-- ------**************-------------  CHANGE THE DASHBOARD LINK HERE  ------**************------------- -->
+      <iframe
+        id="dashboard"
+        class="w-full flex-1"
+        src="https://analytics-eu.8x8.com/shared-dashboard/3b139452-e0ee-4a31-b343-0e672067332b/dark"
+      ></iframe>
+
+<!-- TrustBox widget - Carousel -->
+<div class="trustpilot-widget" data-locale="en-GB" data-template-id="53aa8912dec7e10d38f59f36" data-businessunit-id="64e5fc44aa188b1377e69441" data-style-height="140px" data-style-width="100%" data-stars="5" data-review-languages="en">
+  <a href="https://uk.trustpilot.com/review/www.yunoenergy.ie" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget z-->
+    </div>
+  </body>
 </html>
